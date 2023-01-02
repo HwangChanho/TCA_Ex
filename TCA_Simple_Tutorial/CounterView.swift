@@ -5,84 +5,69 @@
 //  Created by MDsqr on 2022/12/29.
 //
 
+// https://www.youtube.com/watch?v=fYQ9YnbvasU
+
 import SwiftUI
-import CoreData
+import ComposableArchitecture
 
-struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
+// 도메인 + 상태
+struct CounterState: Equatable {
+    var count = 0
+}
 
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
+// 도메인 + 액션
+enum CounterAction: Equatable {
+    case addCount // 카운트 더하는 액션
+    case subCount // 카운트 뺴는 액션
+}
 
+struct CounterEnvironment {}
+
+/*
+ public struct AnyReducer<State, Action, Environment> {
+ private let reducer: (inout State, Action, Environment) -> EffectTask<Action>
+ */
+
+let counterReducer = AnyReducer<CounterState, CounterAction, CounterEnvironment> { state, action, eniv in
+    
+    // 들어온 액션에 따라 상태를 변경
+    
+    switch action {
+    case .addCount:
+        state.count += 1
+        return Effect.none
+    case .subCount:
+        state.count -= 1
+        return Effect.none
+    }
+}
+
+
+struct CounterView: View {
+    
+    let store: Store<CounterState, CounterAction>
+    
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+        WithViewStore(self.store) { viewStore in
+            VStack {
+                Text("\(viewStore.state.count)")
+                    .padding()
+                HStack {
+                    Button("더하기") {
+                        viewStore.send(.addCount)
                     }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                    Button("뺴기") {
+                        viewStore.send(.subCount)
                     }
                 }
             }
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
+            
         }
     }
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-    }
-}
+//struct CounterView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CounterView()
+//    }
+//}

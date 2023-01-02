@@ -6,15 +6,18 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct TCA_Simple_TutorialApp: App {
-    let persistenceController = PersistenceController.shared
+    
+    let counterStore = Store(initialState: CounterState(), reducer: counterReducer, environment: CounterEnvironment())
+    
+    let memoStore = Store(initialState: MemoState(), reducer: memoReducer, environment: MemoEnvironment(memoClient: MemoClient.live, mainQueue: .main)) // static memo
 
     var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+        WindowGroup() {
+            MemoView(store: memoStore)
         }
     }
 }

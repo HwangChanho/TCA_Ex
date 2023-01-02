@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D66F884295D574000DFFF29 /* TCA_Simple_TutorialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D66F883295D574000DFFF29 /* TCA_Simple_TutorialApp.swift */; };
-		3D66F886295D574000DFFF29 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D66F885295D574000DFFF29 /* ContentView.swift */; };
+		3D66F886295D574000DFFF29 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D66F885295D574000DFFF29 /* CounterView.swift */; };
 		3D66F888295D574200DFFF29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D66F887295D574200DFFF29 /* Assets.xcassets */; };
 		3D66F88B295D574200DFFF29 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D66F88A295D574200DFFF29 /* Preview Assets.xcassets */; };
 		3D66F88D295D574200DFFF29 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D66F88C295D574200DFFF29 /* Persistence.swift */; };
@@ -16,6 +16,11 @@
 		3D66F89A295D574200DFFF29 /* TCA_Simple_TutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D66F899295D574200DFFF29 /* TCA_Simple_TutorialTests.swift */; };
 		3D66F8A4295D574200DFFF29 /* TCA_Simple_TutorialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D66F8A3295D574200DFFF29 /* TCA_Simple_TutorialUITests.swift */; };
 		3D66F8A6295D574200DFFF29 /* TCA_Simple_TutorialUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D66F8A5295D574200DFFF29 /* TCA_Simple_TutorialUITestsLaunchTests.swift */; };
+		3D66F8B4295D587A00DFFF29 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 3D66F8B3295D587A00DFFF29 /* ComposableArchitecture */; };
+		3D66F8B6295D587A00DFFF29 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 3D66F8B5295D587A00DFFF29 /* Dependencies */; };
+		3DA3ECCE29626B9600DC8880 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3ECCD29626B9600DC8880 /* Memo.swift */; };
+		3DA3ECD029626BD400DC8880 /* MemoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3ECCF29626BD400DC8880 /* MemoClient.swift */; };
+		3DA3ECD229626EF600DC8880 /* MemoVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3ECD129626EF600DC8880 /* MemoVIew.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +43,7 @@
 /* Begin PBXFileReference section */
 		3D66F880295D574000DFFF29 /* TCA_Simple_Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCA_Simple_Tutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D66F883295D574000DFFF29 /* TCA_Simple_TutorialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCA_Simple_TutorialApp.swift; sourceTree = "<group>"; };
-		3D66F885295D574000DFFF29 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3D66F885295D574000DFFF29 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		3D66F887295D574200DFFF29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D66F88A295D574200DFFF29 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3D66F88C295D574200DFFF29 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -48,6 +53,10 @@
 		3D66F89F295D574200DFFF29 /* TCA_Simple_TutorialUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TCA_Simple_TutorialUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D66F8A3295D574200DFFF29 /* TCA_Simple_TutorialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCA_Simple_TutorialUITests.swift; sourceTree = "<group>"; };
 		3D66F8A5295D574200DFFF29 /* TCA_Simple_TutorialUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCA_Simple_TutorialUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3DA3ECCD29626B9600DC8880 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
+		3DA3ECCF29626BD400DC8880 /* MemoClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoClient.swift; sourceTree = "<group>"; };
+		3DA3ECD129626EF600DC8880 /* MemoVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoVIew.swift; sourceTree = "<group>"; };
+		3DA3ECD329629AEF00DC8880 /* TCA-Simple-Tutorial-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "TCA-Simple-Tutorial-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D66F8B4295D587A00DFFF29 /* ComposableArchitecture in Frameworks */,
+				3D66F8B6295D587A00DFFF29 /* Dependencies in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,12 +109,16 @@
 		3D66F882295D574000DFFF29 /* TCA_Simple_Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				3DA3ECD329629AEF00DC8880 /* TCA-Simple-Tutorial-Info.plist */,
 				3D66F883295D574000DFFF29 /* TCA_Simple_TutorialApp.swift */,
-				3D66F885295D574000DFFF29 /* ContentView.swift */,
+				3D66F885295D574000DFFF29 /* CounterView.swift */,
 				3D66F887295D574200DFFF29 /* Assets.xcassets */,
 				3D66F88C295D574200DFFF29 /* Persistence.swift */,
 				3D66F88E295D574200DFFF29 /* TCA_Simple_Tutorial.xcdatamodeld */,
 				3D66F889295D574200DFFF29 /* Preview Content */,
+				3DA3ECCD29626B9600DC8880 /* Memo.swift */,
+				3DA3ECCF29626BD400DC8880 /* MemoClient.swift */,
+				3DA3ECD129626EF600DC8880 /* MemoVIew.swift */,
 			);
 			path = TCA_Simple_Tutorial;
 			sourceTree = "<group>";
@@ -149,6 +164,10 @@
 			dependencies = (
 			);
 			name = TCA_Simple_Tutorial;
+			packageProductDependencies = (
+				3D66F8B3295D587A00DFFF29 /* ComposableArchitecture */,
+				3D66F8B5295D587A00DFFF29 /* Dependencies */,
+			);
 			productName = TCA_Simple_Tutorial;
 			productReference = 3D66F880295D574000DFFF29 /* TCA_Simple_Tutorial.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +240,9 @@
 				Base,
 			);
 			mainGroup = 3D66F877295D574000DFFF29;
+			packageReferences = (
+				3D66F8B2295D587A00DFFF29 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 3D66F881295D574000DFFF29 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -263,10 +285,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DA3ECCE29626B9600DC8880 /* Memo.swift in Sources */,
 				3D66F890295D574200DFFF29 /* TCA_Simple_Tutorial.xcdatamodeld in Sources */,
+				3DA3ECD029626BD400DC8880 /* MemoClient.swift in Sources */,
 				3D66F88D295D574200DFFF29 /* Persistence.swift in Sources */,
-				3D66F886295D574000DFFF29 /* ContentView.swift in Sources */,
+				3D66F886295D574000DFFF29 /* CounterView.swift in Sources */,
 				3D66F884295D574000DFFF29 /* TCA_Simple_TutorialApp.swift in Sources */,
+				3DA3ECD229626EF600DC8880 /* MemoVIew.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +453,7 @@
 				DEVELOPMENT_TEAM = 87LF83524P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TCA-Simple-Tutorial-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -457,6 +483,7 @@
 				DEVELOPMENT_TEAM = 87LF83524P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TCA-Simple-Tutorial-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -591,6 +618,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3D66F8B2295D587A00DFFF29 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3D66F8B3295D587A00DFFF29 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D66F8B2295D587A00DFFF29 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		3D66F8B5295D587A00DFFF29 /* Dependencies */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D66F8B2295D587A00DFFF29 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = Dependencies;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		3D66F88E295D574200DFFF29 /* TCA_Simple_Tutorial.xcdatamodeld */ = {
